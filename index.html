@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าเว็บพร้อมเมนูด้านบน</title>
+    <style>
+        /* ตั้งค่าพื้นฐานและทำให้เลื่อนหน้าจอแบบนุ่มนวล (Smooth Scroll) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ตกแต่งแถบเมนูให้อยู่ติดด้านบน */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95); /* สีขาวแบบโปร่งแสงนิดๆ ให้เห็นพื้นหลังเวลาเลื่อน */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* เงาใต้เมนูให้ดูมีมิติ */
+            z-index: 1000; /* ให้เมนูอยู่เลเยอร์บนสุดเสมอ */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            transition: all 0.3s ease; /* เพิ่มความนุ่มนวลเวลาเปลี่ยนสถานะ */
+        }
+
+        /* โลโก้ฝั่งซ้าย */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        /* กลุ่มลิงก์เมนูฝั่งขวา */
+        .menu-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .menu-links li {
+            margin-left: 20px;
+        }
+
+        .menu-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease; /* เอฟเฟกต์ตอนเมาส์ชี้ */
+        }
+
+        /* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ที่เมนู (Hover) */
+        .menu-links a:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* ส่วนของเนื้อหาจำลองแต่ละหน้าเพื่อทดสอบการเลื่อน (Scroll) */
+        section {
+            padding: 100px 50px;
+            height: 100vh; /* ให้แต่ละส่วนสูงเต็มหน้าจอ */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* ใส่สีพื้นหลังให้แต่ละ Section แตกต่างกันเพื่อให้เห็นระยะเลื่อนชัดเจน */
+        #home { background-color: #f9f9f9; }
+        #about { background-color: #e8f4f8; }
+        #services { background-color: #eaf2f8; }
+        #contact { background-color: #f4ecf7; }
+
+        section h1 {
+            font-size: 48px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 18px;
+            color: #7f8c8d;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+        <a href="#home" class="logo">MyWebsite</a>
+        <ul class="menu-links">
+            <li><a href="#home">หน้าแรก</a></li>
+            <li><a href="#about">เกี่ยวกับเรา</a></li>
+            <li><a href="#services">บริการ</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <!-- ส่วนเนื้อหาจำลองของแต่ละเมนู -->
+    <section id="home">
+        <h1>หน้าแรก</h1>
+        <p>ยินดีต้อนรับเข้าสู่หน้าแรกของเว็บไซต์เรา ทดลองเลื่อนหน้าจอลงด้านล่าง หรือคลิกที่เมนูด้านบนเพื่อดูเอฟเฟกต์การเลื่อนแบบนุ่มนวล</p>
+    </section>
+
+    <section id="about">
+        <h1>เกี่ยวกับเรา</h1>
+        <p>ข้อมูลเกี่ยวกับบริษัทหรือองค์กรของเรา เรามุ่งมั่นพัฒนาสิ่งที่ดีที่สุดให้กับคุณ</p>
+    </section>
+
+    <section id="services">
+        <h1>บริการ</h1>
+        <p>เรามีบริการที่หลากหลายเพื่อตอบสนองความต้องการของลูกค้าทุกรูปแบบอย่างมืออาชีพ</p>
+    </section>
+
+    <section id="contact">
+        <h1>ติดต่อ</h1>
+        <p>สามารถติดต่อเราได้ผ่านช่องทางต่างๆ หรือส่งข้อความหาเราได้ที่หน้านี้</p>
+    </section>
+
+</body>
+</html>
